@@ -1,11 +1,23 @@
-sort1 uses: TODO
+sort1 uses: bubble sort
 
-How do you know?: TODO
+How do you know?: O(n^2) in random order numbers, thus sort1 is not merge sort; a bit slower than sort3, thus sort1 should be bubble sort.
+# Type RO5000 RO10000 RO50000
+# Time 0.090s 0.300s  7.200s
+Also, sort1 runs significantly faster than sort3 in sorted numbers, thus sort1 is bubble sort.
+# Type S50000
+# Time 0.435s
 
-sort2 uses: TODO
+sort2 uses: merge sort
 
-How do you know?: TODO
+How do you know?: O(n log n) in random order numbers, thus sort1 is merge sort.
+# Type RO5000 RO10000 RO50000
+# Time 0.030s 0.070s  0.350s
 
-sort3 uses: TODO
+sort3 uses: selection sort
 
-How do you know?: TODO
+How do you know?: O(n^2) in random order numbers, thus sort1 is not merge sort; a bit faster than sort1, thus sort3 should be selection sort.
+# Type RO5000 RO10000 RO50000
+# Time 0.060s 0.180s  3.020s
+Also, sort3 runs significantly slower than sort1 in sorted numbers, and has similar performance to that in random order numbers, thus sort3 is selection sort.
+# Type S50000
+# Time 3.300s

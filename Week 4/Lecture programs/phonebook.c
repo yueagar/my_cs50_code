@@ -18,4 +18,7 @@ int main(void)
     fprintf(file, "%s,%s\n", name, number);
 
     fclose(file);
+
+    free(name);
+    free(number);
 };

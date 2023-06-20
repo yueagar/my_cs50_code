@@ -1,0 +1,8 @@
+1. Their audio aura is bold and wistful.
+Notes:
+Average energy = 0.65906
+Average valence = 0.484443
+Average danceability = 0.71646
+
+2. Some songs might be irrelevant to the mood of the listener. They might just sound pleasant to the listener so he/she listened to them frequently.
+Instead of calculating the average values, we can instead calculate the median values to obtain a more accurate audio aura.

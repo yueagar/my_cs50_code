@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                document.querySelectorAll(".p1-ans-btn").forEach(item => item.addEventListener("click", event => {
+                    const button = event.target;
+                    if (button.value == button.parentElement.getAttribute("ans")) {
+                        button.style.backgroundColor = "green";
+                        button.parentElement.children[0].innerText = "Correct";
+                    } else {
+                        button.style.backgroundColor = "red";
+                        button.parentElement.children[0].innerText = "Incorrect";
+                    };
+                }));
+                document.querySelectorAll(".p2-ans-form").forEach(item => item.addEventListener("submit", event => {
+                    const form = event.target
+                        , button = event.submitter;
+                    if (form.children[0].value == form.parentElement.getAttribute("ans")) {
+                        button.style.backgroundColor = "green";
+                        form.parentElement.children[0].innerText = "Correct";
+                    } else {
+                        button.style.backgroundColor = "red";
+                        form.parentElement.children[0].innerText = "Incorrect";
+                    };
+                    event.preventDefault();
+                }));
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>1. Which one of the following countries was NOT considered as an Axis power during World War 2?</h3>
+                <div ans="Yugoslavia">
+                    <div class="p1-ans-result"></div>
+                    <button class="p1-ans-btn" value="Romania">Romania</button>
+                    <button class="p1-ans-btn" value="Bulgaria">Bulgaria</button>
+                    <button class="p1-ans-btn" value="Yugoslavia">Yugoslavia</button>
+                    <button class="p1-ans-btn" value="Italy">Italy</button>
+                </div>
+                <h3>2. Which one of the following cities is the capital of Turkey?</h3>
+                <div ans="Ankara">
+                    <div class="p1-ans-result"></div>
+                    <button class="p1-ans-btn" value="Istanbul">Istanbul</button>
+                    <button class="p1-ans-btn" value="Constantinople">Constantinople</button>
+                    <button class="p1-ans-btn" value="Edirne">Edirne</button>
+                    <button class="p1-ans-btn" value="Ankara">Ankara</button>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>1. Name the country which started World War 1.</h3>
+                <div ans="Austria-Hungary">
+                    <div class="p2-ans-result"></div>
+                    <form class="p2-ans-form">
+                        <input class="p2-ans-box" autocomplete="off" autofocus placeholder="Country" type="text">
+                        <button type="submit">Check Answer</button>
+                    </form>
+                </div>
+                <h3>2. Name the country which started World War 2.</h3>
+                <div ans="Germany">
+                    <div class="p2-ans-result"></div>
+                    <form class="p2-ans-form">
+                        <input class="p2-ans-box" autocomplete="off" autofocus placeholder="Country" type="text">
+                        <button type="submit">Check Answer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
